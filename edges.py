@@ -14,7 +14,7 @@ while(True):
     # get one frame (image) from camera
     ret, frame = capture.read()
 
-    # convert color image to greyscale
+    # convert color image to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # resize, comment out if not wanted
