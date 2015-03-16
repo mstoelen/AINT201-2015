@@ -5,13 +5,16 @@ capture = cv2.VideoCapture(0)
 
 while(True):
 
-    sizeOfGaussian = 81
+    sizeOfGaussian = 1
 
     # get one frame (image) from camera
     ret, frame = capture.read()
 
-    # convert color image to greyscale
+    # convert color image to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # resize, comment out if not wanted
+    gray = cv2.resize(gray,(640,360))
 
     # apply Gaussian averaging
     gaussian = cv2.GaussianBlur(gray, (sizeOfGaussian,sizeOfGaussian), 0)

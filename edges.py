@@ -17,6 +17,9 @@ while(True):
     # convert color image to greyscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    # resize, comment out if not wanted
+    gray = cv2.resize(gray,(640,360))
+
     # apply Gaussian averaging
     gaussian = cv2.GaussianBlur(gray, (sizeOfGaussian,sizeOfGaussian), 0)
 
